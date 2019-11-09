@@ -35,8 +35,6 @@ def home():
 def api_all():
     return jsonify(books)
 
-app.run()
-
 
 # If we're running in stand alone mode, run the application
 if __name__ == '__main__':
