@@ -1,11 +1,22 @@
-import flask
+from flask import (
+    Flask,
+    render_template
+)
 
-app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+# Create the application instance
+app = Flask(__name__, template_folder="templates")
 
-
+# Create a URL route in our application for "/"
 @app.route('/', methods=['GET'])
 def home():
-    return "<h1>Distant Reading Archive</h1><p>This site is a prototype API for distant reading of science fiction novels.</p>"
+    """
+    This function just responds to the browser ULR
+    localhost:5000/
 
-app.run()
+    :return:        the rendered template 'home.html'
+    """
+    return render_template('home.html')
+
+# If we're running in stand alone mode, run the application
+if __name__ == '__main__':
+    app.run(debug=True)
