@@ -1,3 +1,4 @@
+import sqlite3
 from flask import (
     Flask,
     render_template,
@@ -5,7 +6,7 @@ from flask import (
 	request
 )
 
-
+# Just a test data for now
 books = [
     {'id': 0,
      'title': 'A Fire Upon the Deep',
@@ -24,7 +25,6 @@ books = [
      'published': '1975'}
 ]
 
-
 # Create the application instance
 app = Flask(__name__, template_folder="templates")
 
@@ -32,9 +32,6 @@ app = Flask(__name__, template_folder="templates")
 @app.route('/', methods=['GET'])
 def home():
     """
-    This function just responds to the browser ULR
-    localhost:5000/
-
     :return:        the rendered template 'home.html'
     """
     return render_template('home.html')
