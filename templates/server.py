@@ -7,7 +7,7 @@ from flask import (
 app = Flask(__name__, template_folder="templates")
 
 # Create a URL route in our application for "/"
-@app.route('/')
+@app.route('/home')
 def home():
     """
     This function just responds to the browser ULR
